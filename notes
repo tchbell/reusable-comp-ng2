@@ -1,0 +1,19 @@
+Create our component. Add the three main files: weather.component.ts, weather.component.html, and weather.component.css.
+
+Once we have created our files we have to setup our component.ts file.
+First import component from angular core: import { Component } from '@angular/core'
+Next create the component decorator:
+  @Component({
+    moduleId: module.id,
+    selector: 'weather-widget',
+    templateUrl: 'weather.component.html',
+    styleUrls: ['weather.component.css']
+  })
+  This will be different from Angular 5 but for this course giving the module Id will allow us to have paths from the folder we are in.
+  Make sure to not forget that the stylesUrls is an array.
+
+  Then create the class: export class WeatherComponent { }
+Now go to app.module.ts to declare the new Component
+Import it to app.module : import { WeatherComponent } from filepath
+
+then add component to declaration array.
