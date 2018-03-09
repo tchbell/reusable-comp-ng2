@@ -17,3 +17,20 @@ Now go to app.module.ts to declare the new Component
 Import it to app.module : import { WeatherComponent } from filepath
 
 then add component to declaration array.
+
+Creating a service.
+Create a new folder in the weather-widget folder called service.
+Next add a file called weather.service.ts in the new service folder
+inside your new file we need to import Injectable from angular/core:
+import { Injectable } from '@angular/core';
+
+next we need to add Injectable() into our service files
+then we need to export our class
+export class WeatherService{ }
+Now since we want to use it in our weather component we have to import it into our component file.
+import { WeatherService } from '../service/weather.service';
+then underneath our styles declaration add a providers key with the value being an array and containing WeatherService. now we have imported our service into our component and have listed it as a a provider.
+Now we need to add a constructor to our component.
+Inside our class add constructor(){} following that we need to do dependency injection with our service. so inject weather service into our constructor.
+constructor(private :service WeatherService){ }
+We are injecting a private service with a type of weatherservice into our constructor function.
