@@ -6,12 +6,15 @@ import { WeatherService } from '../service/weather.service';
   moduleId: module.id,
   selector: 'weather-widget',
   templateUrl: 'weather.component.html',
-  styleUrls:['weather.component.css'],
-  providers: [ WeatherService ]
+  styleUrls: ['weather.component.css'],
+  providers: [WeatherService]
 })
 
 export class WeatherComponent {
-  constructor(private service: WeatherService){
+  constructor(private service: WeatherService) {
     this.service.getCurrentLocation();
+    this.service.getCurrentWeather(0, 0)
+      .subscribe(weather => console.log(weather),
+        err => console.error(err));
   }
- }
+}
